@@ -1,0 +1,7 @@
+{
+  "name": "repair-POS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

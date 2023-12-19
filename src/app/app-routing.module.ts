@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
  },
   {
@@ -25,7 +25,9 @@ const routes: Routes = [
   {
     path: 'orders',
     loadChildren: () => import('./orders/orders.module').then( m => m.OrdersPageModule)
-  }
+  },
+ 
+  
 ];
 @NgModule({
   imports: [

@@ -1,0 +1,178 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" (click)="close()" expand="block" fill="clear" shape="round">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+    <ion-title>{{step}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content *ngIf="Rtype" class="ion-no-padding ion-justify-content-center">
+        <ion-button class="ion-no-padding" (click)="createNewType()" fill="clear" color="danger" class="ion-justify-content-end" >
+        <ion-card color="danger">
+          <ion-card-header>
+            <ion-card-subtitle><strong>Nuevo</strong></ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content > 
+            <ion-icon 
+            slot="icon-only" name="add-circle"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-button>
+        <ion-button class="ion-no-padding" *ngFor="let type of types" (click)="selectType(type) "fill="clear" color="danger">
+        <ion-card color="light" style="height: 100%;">
+          <ion-card-header>
+            <ion-card-subtitle>{{type.typeName}}</ion-card-subtitle>
+          </ion-card-header>
+        <ion-card-content>
+          <ion-icon 
+          slot="icon-only" name="create"></ion-icon>
+        </ion-card-content>
+      </ion-card>
+    </ion-button>
+  
+</ion-content>
+<ion-content *ngIf="Rbrand">
+  
+        <ion-button  class="ion-no-padding" (click)="createBrand()" fill="clear" color="danger" class="ion-justify-content-end" >
+          <ion-card color="danger">
+            <ion-card-header>
+              <ion-card-subtitle><strong>Nuevo</strong></ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content > 
+              <ion-icon 
+              slot="icon-only" name="add-circle"></ion-icon>
+            </ion-card-content>
+          </ion-card>
+        </ion-button>
+          <ion-button class="ion-no-padding" *ngFor="let brand of brands" (click)="selectbrand(brand) "fill="clear" color="danger">
+          <ion-card color="light" style="height: 100%;">
+            <ion-card-header>
+              <ion-card-subtitle>{{brand.brandsName}}</ion-card-subtitle>
+            </ion-card-header>
+          <ion-card-content>
+            <ion-icon 
+            slot="icon-only" name="create"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-button>
+ 
+</ion-content>
+<ion-content *ngIf="Rmodel">
+  <ion-button class="ion-no-padding" (click)="createModel()" fill="clear" color="danger" class="ion-justify-content-end" >
+    <ion-card color="danger">
+      <ion-card-header>
+        <ion-card-subtitle><strong>Nuevo</strong></ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content > 
+        <ion-icon 
+        slot="icon-only" name="add-circle"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+  </ion-button>
+    <ion-button class="ion-no-padding"  *ngFor="let model of models" (click)="selecModel(model) "fill="clear" color="danger">
+    <ion-card color="light" style="height: 100%;">
+      <ion-card-header>
+        <ion-card-subtitle>{{model.modelName}}</ion-card-subtitle>
+      </ion-card-header>
+    <ion-card-content>
+      <ion-icon 
+      slot="icon-only" name="create"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+</ion-button>
+</ion-content>
+<ion-content *ngIf="Rfixed">
+  <ion-button class="ion-no-padding" (click)="createModel()" fill="clear" color="danger" class="ion-justify-content-end" >
+    <ion-card color="danger">
+      <ion-card-header>
+        <ion-card-subtitle><strong>Nuevo</strong></ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content > 
+        <ion-icon 
+        slot="icon-only" name="add-circle"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+  </ion-button>
+    <ion-button class="ion-no-padding" *ngFor="let problem of fixingProblems[0].problems" (click)="selectProblem(problem) "fill="clear" color="danger">
+    <ion-card color="light" >
+      <ion-card-header>
+        <ion-card-subtitle>{{problem.name}}</ion-card-subtitle>
+      </ion-card-header>
+    <ion-card-content>
+      <ion-icon 
+      slot="icon-only" name="create"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+</ion-button>
+</ion-content>
+<ion-content *ngIf="RForm">
+  <form [formGroup]="repairGroup">
+    <ion-grid fixed class="ion-text-center ion-padding-top">
+      <ion-row>
+        <ion-col size="6" class="ion-padding">
+          <ion-item lines="none" shape="round">
+            <ion-label position="stacked"><strong>Dispositivo:</strong></ion-label>
+            <ion-input type="text" placeholder="Dispositivo" formControlName="device"></ion-input>
+            <ion-icon name="phone-portrait" slot="end"></ion-icon>
+          </ion-item>  
+        </ion-col>
+      
+       
+        <ion-col size="6" class="ion-padding">
+          <ion-item lines="none" shape="round">
+            <ion-label position="stacked"><strong>Problema:</strong></ion-label>
+            <ion-input type="text" formControlName="deviceProblem"></ion-input>
+            <ion-icon name="alert-circle" slot="end"></ion-icon>
+          </ion-item> 
+        </ion-col>
+        <ion-col size="6" class="ion-padding">
+          <ion-item lines="none" shape="round">
+            <ion-label position="stacked"><strong>Serial/Imei:</strong></ion-label>
+            <ion-input type="text" formControlName="serialImei" placeholder="Serial/Imei"></ion-input>
+            <ion-icon name="scan-circle" slot="start"></ion-icon>
+          </ion-item>
+        </ion-col>
+      
+        <ion-col size="6" class="ion-padding">
+          <ion-item lines="none" shape="round">
+            <ion-label position="stacked"><strong>Codigo de Seguridad:</strong> </ion-label>
+            <ion-input type="text" formControlName="serialImei" placeholder="Codigo de Seguridad"></ion-input>
+            <ion-icon name="keypad" slot="start"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" class="ion-padding">
+          <ion-item lines="none" shape="round">
+            <ion-label position="stacked"><strong>Costo:</strong> </ion-label>
+            <ion-input type="decimal" formControlName="serialImei" placeholder="Costo"></ion-input>
+            <ion-icon name="logo-usd" slot="start"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" class="ion-padding">
+          <ion-item lines="none" fill="outline">
+            <ion-label position="stacked"><strong>Comentarios:</strong> </ion-label>
+            <ion-textarea ></ion-textarea>
+            <ion-icon name="reader" slot="start"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button *ngIf="!Rtype" color="light" expand="block" (click)="previous()">Atras</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="danger" expand="block" (click)="close()">Salir</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

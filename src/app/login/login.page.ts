@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    this.returnUrl = this.router.navigateByUrl("/tabs");
+    this.returnUrl = this.router.navigateByUrl("/tabs/home");
     }
     
 }

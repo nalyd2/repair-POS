@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-explore-container',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
 export class ExploreContainerComponent {
 
   @Input() name?: string;
-
+component = HomePage;
 }

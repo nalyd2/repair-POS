@@ -1,13 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Tipo de Reparacion</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Seleciona el Modelo</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding ">
   <ion-grid [fixed]="true">
-    <ion-row class="ion-align-items-center">
-      <ion-col size="12" size-sm="6" sizeMd="4" sizeLg="2" sizeXl="4">
-          <ion-card color="danger" class="ion-text-center" style="height: 100%;" button="true" (click)="createNewType()">
+    <ion-row class="ion-align-items-start">
+      <ion-col size="12" size-sm="6" sizeMd="4" sizeLg="2" sizeXl="3">
+          <ion-card color="danger" class="ion-text-center" style="height: 100%;" button="true" >
             <ion-card-header>
               <ion-card-subtitle><strong>NUEVO</strong></ion-card-subtitle>
             </ion-card-header>
@@ -17,10 +20,10 @@
             </ion-card-content>
           </ion-card>
       </ion-col>
-      <ion-col size="12" size-sm="6" sizeMd="4" sizeLg="2" sizeXl="4" *ngFor="let type of types">
-          <ion-card color="light" class="ion-text-center" style="height: 100%; height: 100%;"button="true" (click)="goToBrand(type) ">
+      <ion-col size="12" size-sm="6" sizeMd="4" sizeLg="2" sizeXl="3" *ngFor="let model of models[0].models">
+          <ion-card color="light" class="ion-text-center" style="height: 100%; height: 100%;"button="true" (click)="goToProblems(model)">
             <ion-card-header>
-              <ion-card-subtitle>{{type.typeName}}</ion-card-subtitle>
+              <ion-card-subtitle>{{model.modelName}}</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
               <ion-icon slot="icon-only" name="create"></ion-icon>
@@ -29,14 +32,13 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  
 </ion-content>
 <ion-footer [translucent]="true">
   <ion-grid fixed>
     <ion-row>
       <ion-col size="6">
         <ion-button color="light" expand="block" (click)="back()">Atras</ion-button>
-
       </ion-col>
       <ion-col size="6">
         <ion-button color="danger" expand="block" (click)="close()">Salir</ion-button>

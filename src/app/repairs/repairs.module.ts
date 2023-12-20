@@ -11,6 +11,8 @@ import { CreateRepairModalComponent } from '../componets/create-repair-modal/cre
 import { TypeComponent } from './component/type/type.component';
 import { BaseNavComponent } from './component/base-nav/base-nav.component';
 import { BrandsComponent } from './component/brands/brands.component';
+import { ModelsComponent } from './component/models/models.component';
+import { ProblemComponent } from './component/problem/problem.component';
 //import { RepairTypeComponent } from '../componets/repair-type/repair-type.component';
 
 @NgModule({
@@ -23,7 +25,8 @@ import { BrandsComponent } from './component/brands/brands.component';
     
   ],
   declarations: [RepairsPage,CreateRepairModalComponent,TypeComponent
-    ,BaseNavComponent,BrandsComponent
+    ,BaseNavComponent,BrandsComponent,
+    ModelsComponent,ProblemComponent
   ]
 })
 export class RepairsPageModule {}

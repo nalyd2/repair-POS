@@ -24,8 +24,14 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
 html{
-    font-size: 100%;
+    font-size: calc(0.75em + 1vmin)!important;
+}
+/*html{
+    
+  //font-size: 100%;
+    font-size: 2em;
     @media (max-width:290px) {
         font-size: 45%;
     }
@@ -45,7 +51,8 @@ html{
         font-size: 59%;
     }
     @media (min-width:360px) {
-        font-size: 50%;
+        //font-size: 50%;
+        font-size: .75em;
     }
     @media (min-width:411px) {
         font-size: 70%;
@@ -65,3 +72,4 @@ html.ios{
         font-size: 59%;
     }
 }
+*/

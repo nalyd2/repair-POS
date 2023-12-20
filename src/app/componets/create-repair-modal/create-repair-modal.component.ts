@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonModal, IonNav, ModalController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
-import { RepairTypeComponent } from '../repair-type/repair-type.component';
 import { RepairModel } from 'src/app/models/RepairModel';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 

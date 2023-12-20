@@ -8,11 +8,9 @@ import { RepairsPageRoutingModule } from './repairs-routing.module';
 
 import { RepairsPage } from './repairs.page';
 import { CreateRepairModalComponent } from '../componets/create-repair-modal/create-repair-modal.component';
-import { RepairTypeComponent } from './components/repair-type/repair-type.component';
-import { BrandComponent } from './components/brand/brand.component';
-import { NewRepairComponent } from './components/new-repair/new-repair.component';
-import { PageTwoComponent } from './components/page-two-component';
-import { PageThreeComponent } from './components/page-three-component';
+import { TypeComponent } from './component/type/type.component';
+import { BaseNavComponent } from './component/base-nav/base-nav.component';
+import { BrandsComponent } from './component/brands/brands.component';
 //import { RepairTypeComponent } from '../componets/repair-type/repair-type.component';
 
 @NgModule({
@@ -24,9 +22,8 @@ import { PageThreeComponent } from './components/page-three-component';
     ReactiveFormsModule
     
   ],
-  declarations: [RepairsPage,CreateRepairModalComponent,
-    RepairTypeComponent,BrandComponent,NewRepairComponent
-    ,PageTwoComponent,PageThreeComponent
+  declarations: [RepairsPage,CreateRepairModalComponent,TypeComponent
+    ,BaseNavComponent,BrandsComponent
   ]
 })
 export class RepairsPageModule {}

@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RepairsPage } from './repairs.page';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import { RepairTypeComponent } from './components/repair-type/repair-type.component';
+import { BaseNavComponent } from './component/base-nav/base-nav.component';
+import { BrandsComponent } from './component/brands/brands.component';
 
 const routes: Routes = [
   {
@@ -11,9 +12,14 @@ const routes: Routes = [
     component: RepairsPage
   },
   {
-    path: 'newrepair',
-    component: RepairTypeComponent
-  }
+    path: 'baseNav',
+    component: BaseNavComponent
+  },
+  {
+    path: 'brand',
+    component: BrandsComponent
+  },
+  
 ];
 
 @NgModule({

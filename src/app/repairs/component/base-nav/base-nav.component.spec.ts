@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BrandComponent } from './brand.component';
+import { BaseNavComponent } from './base-nav.component';
 
-describe('BrandComponent', () => {
-  let component: BrandComponent;
-  let fixture: ComponentFixture<BrandComponent>;
+describe('BaseNavComponent', () => {
+  let component: BaseNavComponent;
+  let fixture: ComponentFixture<BaseNavComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BrandComponent ],
+      declarations: [ BaseNavComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BrandComponent);
+    fixture = TestBed.createComponent(BaseNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

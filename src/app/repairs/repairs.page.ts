@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet, ModalController } from '@ionic/angular';
 import { CreateRepairModalComponent } from '../componets/create-repair-modal/create-repair-modal.component';
-import { RepairTypeComponent } from '../componets/repair-type/repair-type.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,7 +20,7 @@ export class RepairsPage implements OnInit {
     (await modal).present();
   }
   goToNewRepair(){
-    this.returnUrl = this.router.navigateByUrl("/tabs/repairs/newrepair");
+    this.returnUrl = this.router.navigateByUrl("/tabs/repairs/baseNav");
   }
   
 

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tipo de Reparacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding ">
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" size-sm="6" sizeMd="4" sizeLg="2" sizeXl="1">
+          <ion-card color="danger" class="ion-text-center" style="height: 100%;" button="true" (click)="createNewType()">
+            <ion-card-header>
+              <ion-card-subtitle><strong>NUEVO</strong></ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+      <ion-col size="12" size-sm="6" sizeMd="4" sizeLg="2" sizeXl="1" *ngFor="let type of types">
+          <ion-card color="light" class="ion-text-center" style="height: 100%; height: 100%;"button="true" (click)="goToBrand(type) ">
+            <ion-card-header>
+              <ion-card-subtitle>{{type.typeName}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-icon slot="icon-only" name="create"></ion-icon>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button color="light" expand="block" (click)="back()">Atras</ion-button>
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="danger" expand="block" (click)="close()">Salir</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
